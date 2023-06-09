@@ -6,7 +6,7 @@ const microservicioRouter = Router();
 
 microservicioRouter.get("/", async (req, res) => {
     try {
-      const response = await axios.get("http://localhost:4001/api/pelicula");
+      const response = await axios.get("https://api-peliculas-vercel.vercel.app/api/pelicula");
       const data = response.data;
       res.send(data);
     } catch (error) {
@@ -17,7 +17,7 @@ microservicioRouter.get("/", async (req, res) => {
   microservicioRouter.get("/:id", async (req, res) => {
     try {
       const {id} = req.params; 
-      const response = await axios.get(`http://localhost:4001/api/pelicula/${id}`);
+      const response = await axios.get(`https://api-peliculas-vercel.vercel.app/api/pelicula/${id}`);
       const data = response.data;
       res.send(data);
     } catch (error) {
@@ -28,7 +28,7 @@ microservicioRouter.get("/", async (req, res) => {
   microservicioRouter.get("/titulo/:nombre", async (req, res) => {
     try {
       const {nombre} = req.params; 
-      const response = await axios.get(`http://localhost:4001/api/pelicula/titulo/${nombre}`);
+      const response = await axios.get(`https://api-peliculas-vercel.vercel.app/api/pelicula/titulo/${nombre}`);
       const data = response.data;
       res.send(data);
     } catch (error) {
@@ -39,7 +39,7 @@ microservicioRouter.get("/", async (req, res) => {
   microservicioRouter.post("/", async (req, res) => {
     try {
       const { body } = req; 
-      const response = await axios.post("http://localhost:4001/api/pelicula", body);
+      const response = await axios.post("https://api-peliculas-vercel.vercel.app/api/pelicula", body);
       const data = response.data;
       res.send(data);
     } catch (error) {
@@ -51,7 +51,7 @@ microservicioRouter.get("/", async (req, res) => {
     try {
       const {id} = req.params; 
       const { body } = req; 
-      const response = await axios.put(`http://localhost:4001/api/pelicula/${id}`, body);
+      const response = await axios.put(`https://api-peliculas-vercel.vercel.app/api/pelicula/${id}`, body);
       const data = response.data;
       res.send(data);
     } catch (error) {
@@ -62,7 +62,7 @@ microservicioRouter.get("/", async (req, res) => {
   microservicioRouter.delete("/:id", async (req, res) => {
     try {
       const { id } = req.params;
-      const response = await axios.delete(`http://localhost:4001/api/pelicula/${id}`);
+      const response = await axios.delete(`https://api-peliculas-vercel.vercel.app/api/pelicula/${id}`);
       const data = response.data;
       res.send(data);
     } catch (error) {
