@@ -52,7 +52,8 @@ microservicioRouter.get("/", async (req, res) => {
   microservicioRouter.put("/:id", async (req, res) => {
     try {
       const {id} = req.params; 
-      const { body } = req; 
+      const body = req.body;
+      console.log('Datos recibidos:', body);
       const response = await axios.put(`https://api-peliculas-vercel.vercel.app/api/pelicula/${id}`, body);
       const data = response.data;
       res.send(data);
