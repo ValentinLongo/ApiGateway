@@ -36,14 +36,16 @@ microservicioRouter.get("/", async (req, res) => {
     }
   });
 
-  microservicioRouter.post("/", async (req, res) => {
+  microservicioRouter.post("/", async(req, res) => {
     try {
-      const { body } = req; 
+      const body = req.body;
+      console.log('Datos recibidos:', body);
       const response = await axios.post("https://api-peliculas-vercel.vercel.app/api/pelicula", body);
       const data = response.data;
       res.send(data);
     } catch (error) {
-      res.status(500).send("Error al realizar la solicitud al microservicio");
+      console.log(error)
+      res.status(500).send(error);
     }
   });
 
