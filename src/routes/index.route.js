@@ -13,8 +13,8 @@ indexRouter.get("/",(req,res) => {
     res.send("Inicio a API")
 })
 
-indexRouter.use("/microservicio1", microservicio1);
-indexRouter.use("/microservicio2", microservicio2);
+indexRouter.use("/peliculas", microservicio1);
+indexRouter.use("/estadisticas", microservicio2);
 indexRouter.use("/microservicio3", microservicio3);
 indexRouter.use("/microservicio4", microservicio4);
 indexRouter.use("/microservicio5", microservicio5);
