@@ -2,7 +2,7 @@ import { Router } from "express";
 import axios from "axios";
 const microservicioRouter = Router();
 
-//--------- Catalogo de películas - BENAVIDEZ Y VAUDAGNA-----------
+//--------- Catalogo de películas - BENAVIDEZ Y VAUDAGNA -----------
 
 microservicioRouter.get("/", async (req, res) => {
     try {
