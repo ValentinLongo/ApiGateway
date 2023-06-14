@@ -47,4 +47,48 @@ microservicioRouter.get("/totalUsuariosRegistrados", async (req, res) => {
     }
   });
 
+  microservicioRouter.get("/calificacionPelicula/:id", async (req, res) => {
+    try {
+      const {id} = req.params; 
+      const response = await axios.get(`https://estadisticasbackend.vercel.app/api/estadisticas/calificacionPelicula/${id}`);
+      const data = response.data;
+      res.send(data);
+    } catch (error) {
+      res.status(500).send("Error al realizar la solicitud al microservicio");
+    }
+  });
+
+  microservicioRouter.get("/tendencias", async (req, res) => {
+    try {
+      const {id} = req.params; 
+      const response = await axios.get(`https://estadisticasbackend.vercel.app/api/estadisticas/tendencias`);
+      const data = response.data;
+      res.send(data);
+    } catch (error) {
+      res.status(500).send("Error al realizar la solicitud al microservicio");
+    }
+  });
+
+  microservicioRouter.get("/generoTendencias", async (req, res) => {
+    try {
+      const {id} = req.params; 
+      const response = await axios.get(`https://estadisticasbackend.vercel.app/api/estadisticas/generoTendencias`);
+      const data = response.data;
+      res.send(data);
+    } catch (error) {
+      res.status(500).send("Error al realizar la solicitud al microservicio");
+    }
+  });
+
+  microservicioRouter.get("/populares", async (req, res) => {
+    try {
+      const {id} = req.params; 
+      const response = await axios.get(`https://estadisticasbackend.vercel.app/api/estadisticas/populares`);
+      const data = response.data;
+      res.send(data);
+    } catch (error) {
+      res.status(500).send("Error al realizar la solicitud al microservicio");
+    }
+  });
+
 export default microservicioRouter;
