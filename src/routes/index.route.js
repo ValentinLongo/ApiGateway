@@ -15,7 +15,7 @@ indexRouter.get("/",(req,res) => {
 
 indexRouter.use("/peliculas", microservicio1);
 indexRouter.use("/estadisticas", microservicio2);
-indexRouter.use("/microservicio3", microservicio3);
+indexRouter.use("/usuario", microservicio3);
 indexRouter.use("/microservicio4", microservicio4);
 indexRouter.use("/microservicio5", microservicio5);
 indexRouter.use("/microservicio6", microservicio6);
